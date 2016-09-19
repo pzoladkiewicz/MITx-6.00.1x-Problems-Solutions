@@ -1,0 +1,9 @@
+s = 'azcbobobegghakl'
+
+
+vowels = 'aeiou'
+vowelsCount = 0
+for letter in s:
+	if letter in vowels:
+		vowelsCount += 1
+print(vowelsCount)
