@@ -31,3 +31,20 @@ Updated balance each month = (Monthly unpaid balance) + (Monthly interest rate x
 
 _________________________________
 
+# Test Case 1:
+balance = 42
+annualInterestRate = 0.2
+monthlyPaymentRate = 0.04
+
+# Result Your Code Should Generate Below:
+Remaining balance: 31.38
+
+
+for month in range (12):
+    balance = balance + balance * annualInterestRate / 12
+    minimumMonthlyPayment = balance * monthlyPaymentRate
+    monthlyUnpaidBalance = balance - minimumMonthlyPayment
+    balance -= minimumMonthlyPayment
+print('Remaining balance:', round(balance,2))
+
+
