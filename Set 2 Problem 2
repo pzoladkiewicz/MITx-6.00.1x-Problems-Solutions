@@ -18,3 +18,17 @@ Monthly unpaid balance = (Previous balance) - (Minimum fixed monthly payment)
 Updated balance each month = (Monthly unpaid balance) + (Monthly interest rate x Monthly unpaid balance)
 
 ____________________________________
+
+lowestPayment = 10
+
+def lowPay(balance, lowestPayment):
+    for month in range(12):
+        balance -= lowestPayment
+        balance *= (1+(annualInterestRate/12))
+    return balance
+
+while (lowPay(balance, lowestPayment) > 0):
+    lowPay(balance, lowestPayment)
+    lowestPayment += 10
+    
+print('Lowest Paymanet:', lowestPayment)
