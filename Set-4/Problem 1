@@ -18,33 +18,32 @@ Do not assume that there are always 7 letters in a hand! The parameter n is the 
 Testing: If this function is implemented properly, and you run test_ps4a.py, you should see that the test_getWordScore() tests pass. Also test your implementation of getWordScore, using some reasonable English words.
 Fill in the code for getWordScore in ps4a.py and be sure you've passed the appropriate tests in test_ps4a.py before pasting your function definition here.
 
-_______________
 
-def getWordScore(word, n):
-    """
-    Returns the score for a word. Assumes the word is a valid word.
+    def getWordScore(word, n):
+        """
+        Returns the score for a word. Assumes the word is a valid word.
 
-    The score for a word is the sum of the points for letters in the
-    word, multiplied by the length of the word, PLUS 50 points if all n
-    letters are used on the first turn.
+        The score for a word is the sum of the points for letters in the
+        word, multiplied by the length of the word, PLUS 50 points if all n
+        letters are used on the first turn.
 
-    Letters are scored as in Scrabble; A is worth 1, B is worth 3, C is
-    worth 3, D is worth 2, E is worth 1, and so on (see SCRABBLE_LETTER_VALUES)
+        Letters are scored as in Scrabble; A is worth 1, B is worth 3, C is
+        worth 3, D is worth 2, E is worth 1, and so on (see SCRABBLE_LETTER_VALUES)
 
-    word: string (lowercase letters)
-    n: integer (HAND_SIZE; i.e., hand size required for additional points)
-    returns: int >= 0
-    """
-    # set initial value
-    outputWordScore = 0
-    
-    # sum score for a word
-    for letter in word:
-        outputWordScore += SCRABBLE_LETTER_VALUES[letter]
+        word: string (lowercase letters)
+        n: integer (HAND_SIZE; i.e., hand size required for additional points)
+        returns: int >= 0
+        """
+        # set initial value
+        outputWordScore = 0
 
-    # multiply word score by its length
-    # and and add 50 pts if all letters are used
-    if len(word) == n:
-        return outputWordScore*len(word)+50
-    else:
-        return outputWordScore*len(word)
+        # sum score for a word
+        for letter in word:
+            outputWordScore += SCRABBLE_LETTER_VALUES[letter]
+
+        # multiply word score by its length
+        # and and add 50 pts if all letters are used
+        if len(word) == n:
+            return outputWordScore*len(word)+50
+        else:
+            return outputWordScore*len(word)
