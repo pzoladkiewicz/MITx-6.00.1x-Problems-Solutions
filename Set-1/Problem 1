@@ -4,7 +4,7 @@ Write a program that counts up the number of vowels contained in the string s. V
 For example, if s = 'azcbobobegghakl', your program should print:
 Number of vowels: 5
 
-
+```py
 s = 'azcbobobegghakl'
 
 vowels = 'aeiou'
@@ -13,3 +13,4 @@ for letter in s:
 	if letter in vowels:
 		vowelsCount += 1
 print(vowelsCount)
+```
