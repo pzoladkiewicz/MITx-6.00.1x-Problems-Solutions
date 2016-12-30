@@ -6,8 +6,8 @@ For example,
     closest_power(4,1) returns 0
 
 Paste your entire function, including the definition, in the box below. Do not leave any debugging print statements.
-________________
 
+```py
 def closest_power(base, num):
     
     #define spare variables
@@ -24,3 +24,4 @@ def closest_power(base, num):
             return exp
             
         exp += 1
+```
