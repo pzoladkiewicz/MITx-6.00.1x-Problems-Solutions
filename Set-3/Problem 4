@@ -21,7 +21,7 @@ Note that if you choose to use the helper functions isWordGuessed, getGuessedWor
 Your function should include calls to input to get the user's guess. 
 
 ________________
-
+```python
 def hangman(secretWord):
     '''
     secretWord: string, the secret word to guess.
@@ -75,3 +75,4 @@ def hangman(secretWord):
         
     if allowedGuesses == 0:    
         print('Sorry, you ran out of guesses. The word was ' + secretWord + '.')
+```
