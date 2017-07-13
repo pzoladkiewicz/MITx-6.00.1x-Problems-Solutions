@@ -29,7 +29,7 @@ Minimum monthly payment = (Minimum monthly payment rate) x (Previous balance)
 Monthly unpaid balance = (Previous balance) - (Minimum monthly payment)
 Updated balance each month = (Monthly unpaid balance) + (Monthly interest rate x Monthly unpaid balance)
 
-_________________________________
+```python
 
 # Test Case 1:
 balance = 42
@@ -46,5 +46,4 @@ for month in range (12):
     monthlyUnpaidBalance = balance - minimumMonthlyPayment
     balance -= minimumMonthlyPayment
 print('Remaining balance:', round(balance,2))
-
-
+```
