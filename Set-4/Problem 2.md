@@ -7,21 +7,21 @@ A hand is the set of letters held by a player during the game. The player is ini
 hand = {'a':1, 'q':1, 'l':2, 'm':1, 'u':1, 'i':1}    
 
 Notice how the repeated letter 'l' is represented. Remember that with a dictionary, the usual way to access a value is hand['a'], where 'a' is the key we want to find. However, this only works if the key is in the dictionary; otherwise, we get a KeyError. To avoid this, we can use the call hand.get('a',0). This is the "safe" way to access a value if we are not sure the key is in the dictionary. d.get(key,default) returns the value for key if key is in the dictionary d, else default. If default is not given, it returns None, so that this method never raises a KeyError. For example:
-
+```
 >>> hand['e']
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 KeyError: 'e'
 >>> hand.get('e', 0)
 0
-
+```
 Converting words into dictionary representation
 
 One useful function we've defined for you is getFrequencyDict, defined near the top of ps4a.py. When given a string of letters as an input, it returns a dictionary where the keys are letters and the values are the number of times that letter is represented in the input string. For example:
-
+```
 >>> getFrequencyDict("hello")
 {'h': 1, 'e': 1, 'l': 2, 'o': 1}
-
+````
 As you can see, this is the same kind of dictionary we use to represent hands.
 Displaying a hand
 
@@ -32,7 +32,7 @@ The hand a player is dealt is a set of letters chosen at random. We provide you 
 Removing letters from a hand (you implement this)
 
 The player starts with a hand, a set of letters. As the player spells out words, letters from this set are used up. For example, the player could start out with the following hand: a, q, l, m, u, i, l. The player could choose to spell the word quail . This would leave the following letters in the player's hand: l, m. Your task is to implement the function updateHand, which takes in two inputs - a hand and a word (string). updateHand uses letters from the hand to spell the word, and then returns a copy of the hand, containing only the letters remaining. For example:
-
+```
 >>> hand = {'a':1, 'q':1, 'l':2, 'm':1, 'u':1, 'i':1}
 >>> displayHand(hand) # Implemented for you
 a q l l m u i
@@ -41,10 +41,9 @@ a q l l m u i
 {'a':0, 'q':0, 'l':1, 'm':1, 'u':0, 'i':0}
 >>> displayHand(hand)
 l m  
-
+```
 Implement the updateHand function. Make sure this function has no side effects: i.e., it must not mutate the hand passed in. Before pasting your function definition here, be sure you've passed the appropriate tests in test_ps4a.py.
-______________
-
+```python
 def updateHand(hand, word):
     """
     Assumes that 'hand' has all the letters in word.
@@ -70,3 +69,4 @@ def updateHand(hand, word):
         modifiedHand[letter] -= 1
         
     return modifiedHand
+```
