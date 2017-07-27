@@ -20,9 +20,7 @@ Write a program that uses these bounds and bisection search (for more info check
 
 Note that if you do not use bisection search, your code will not run - your code only has 30 seconds to run on our servers.
 
-______________________________
-
-
+```sql
 epsilon = 0.01
 
 monthlyInterestRate = annualInterestRate / 12
@@ -44,3 +42,4 @@ while abs(balance) > epsilon:
         upperBound = lowestPayment
 
 print("Lowest Payment:", round(lowestPayment, 2))
+```
