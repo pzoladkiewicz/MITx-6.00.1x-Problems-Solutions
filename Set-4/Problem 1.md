@@ -17,33 +17,33 @@ You will want to use the SCRABBLE_LETTER_VALUES dictionary defined at the top of
 Do not assume that there are always 7 letters in a hand! The parameter n is the number of letters required for a bonus score (the maximum number of letters in the hand). Our goal is to keep the code modular - if you want to try playing your word game with n=10 or n=4, you will be able to do it by simply changing the value of HAND_SIZE!
 Testing: If this function is implemented properly, and you run test_ps4a.py, you should see that the test_getWordScore() tests pass. Also test your implementation of getWordScore, using some reasonable English words.
 Fill in the code for getWordScore in ps4a.py and be sure you've passed the appropriate tests in test_ps4a.py before pasting your function definition here.
+```python
+def getWordScore(word, n):
+    """
+    Returns the score for a word. Assumes the word is a valid word.
 
+    The score for a word is the sum of the points for letters in the
+    word, multiplied by the length of the word, PLUS 50 points if all n
+    letters are used on the first turn.
 
-    def getWordScore(word, n):
-        """
-        Returns the score for a word. Assumes the word is a valid word.
+    Letters are scored as in Scrabble; A is worth 1, B is worth 3, C is
+    worth 3, D is worth 2, E is worth 1, and so on (see SCRABBLE_LETTER_VALUES)
 
-        The score for a word is the sum of the points for letters in the
-        word, multiplied by the length of the word, PLUS 50 points if all n
-        letters are used on the first turn.
+    word: string (lowercase letters)
+    n: integer (HAND_SIZE; i.e., hand size required for additional points)
+    returns: int >= 0
+    """
+    # set initial value
+    outputWordScore = 0
 
-        Letters are scored as in Scrabble; A is worth 1, B is worth 3, C is
-        worth 3, D is worth 2, E is worth 1, and so on (see SCRABBLE_LETTER_VALUES)
+    # sum score for a word
+    for letter in word:
+        outputWordScore += SCRABBLE_LETTER_VALUES[letter]
 
-        word: string (lowercase letters)
-        n: integer (HAND_SIZE; i.e., hand size required for additional points)
-        returns: int >= 0
-        """
-        # set initial value
-        outputWordScore = 0
-
-        # sum score for a word
-        for letter in word:
-            outputWordScore += SCRABBLE_LETTER_VALUES[letter]
-
-        # multiply word score by its length
-        # and and add 50 pts if all letters are used
-        if len(word) == n:
-            return outputWordScore*len(word)+50
-        else:
-            return outputWordScore*len(word)
+    # multiply word score by its length
+    # and and add 50 pts if all letters are used
+    if len(word) == n:
+        return outputWordScore*len(word)+50
+    else:
+        return outputWordScore*len(word)
+```
