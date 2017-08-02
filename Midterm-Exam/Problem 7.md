@@ -16,36 +16,38 @@ Here are two examples:
         ```d2 = {1:40, 2:50, 3:60}```  
     then ```dict_interdiff(d1, d2)``` returns ```({1: False, 2: False, 3: False}, {})```
 
-```
+```python
 def dict_interdiff(d1, d2):
     '''
     d1, d2: dicts whose keys and values are integers
     Returns a tuple of dictionaries according to the instructions above
     '''
     # Your code here
+    
+```python
+
+def dict_interdiff(d1, d2):
+
+    #declare two empty dictionaries
+    a = {}
+    b = {}
+
+    #get keys and assign to variables
+    d1Keys = d1.keys()
+    d2Keys = d2.keys()
+
+    #check for intersect and difference and apply function to first one
+    for key in d1Keys:
+        if key in d2Keys:
+            a[key] = f(d1[key], d2[key])
+
+    for key in d1Keys:
+        if key not in d2Keys:
+            b[key] = d1[key]
+
+    for key in d2Keys:
+        if key not in d1Keys:
+            b[key] = d2[key]
+
+    return (a, b)
 ```
-
-    def dict_interdiff(d1, d2):
-
-        #declare two empty dictionaries
-        a = {}
-        b = {}
-
-        #get keys and assign to variables
-        d1Keys = d1.keys()
-        d2Keys = d2.keys()
-
-        #check for intersect and difference and apply function to first one
-        for key in d1Keys:
-            if key in d2Keys:
-                a[key] = f(d1[key], d2[key])
-
-        for key in d1Keys:
-            if key not in d2Keys:
-                b[key] = d1[key]
-
-        for key in d2Keys:
-            if key not in d1Keys:
-                b[key] = d2[key]
-
-        return (a, b)
