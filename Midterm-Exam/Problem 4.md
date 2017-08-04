@@ -1,13 +1,13 @@
 Implement a function called closest_power that meets the specifications below. 
 For example,
-
+```python
     closest_power(3,12) returns 2
     closest_power(4,12) returns 2
     closest_power(4,1) returns 0
-
+```
 Paste your entire function, including the definition, in the box below. Do not leave any debugging print statements.
 
-```py
+```python
 def closest_power(base, num):
     
     #define spare variables
